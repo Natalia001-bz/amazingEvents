@@ -1,0 +1,22 @@
+ 
+.h-100 {
+    min-height: 100vh !important;
+    
+  }
+
+  .imgCard{
+    height: 300px;
+    width: 400px;
+    object-fit: cover;
+    
+  }
+  .barnav{
+  margin-left:5%;
+  
+  }
+
+  
+.imgicono {
+  width: 30px;
+  height: 30px;
+}
