@@ -1,8 +1,19 @@
- 
+body {
+  padding-bottom: 70px;
+}
+
+.logo {
+  width: 200px;
+  padding-left: 10px;
+}
+
 .h-100 {
     min-height: 100vh !important;
     
   }
+.banner{
+margin-top: -15%;
+}
 
   .imgCard{
     height: 300px;
@@ -20,3 +31,40 @@
   width: 30px;
   height: 30px;
 }
+
+.divcards{
+  margin-top: 15%;
+}
+#divChecks{
+  display:flex;
+  flex-direction:row;
+  justify-content:start;
+  align-items:space-between;
+  margin-left: 20px;
+  box-shadow: 30px, 30px, 30px;
+}
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.imgcarrusel {
+  height: 200px;
+}
+
+@media screen and (max-width: 332px) {
+  .imgcarrusel {
+    height: 230px;
+  }}
+
+  
+  /* _____-stats_________ */
+  .tg  {border-collapse:collapse;border-spacing:0;}
+  .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg .tg-7btt{border-color:inherit;font-weight:bold;vertical-align:top; background-color: gray;}
+  .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
