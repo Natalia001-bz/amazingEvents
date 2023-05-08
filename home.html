@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title> HOME </title>
   <link rel="stylesheet" href="./styles.css">
 
 </head>
@@ -13,7 +13,7 @@
 <body class="d-felx flex-column justify-content-betweenspace aling-items-center h-100">
   <nav class=" d-felx flex-row justify-content-spacearound aling-items-center navbar navbar-expand-md navbar-dark bg-dark">
     <label for="" class="brand">
-      <img class="logo" src="./LogoAmazingEvents.png" alt="logo">
+      <img class="logo" src="./asesst/LogoAmazingEvents.png" alt="logo">
      </label>
     <div class="container-fluid">
            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
@@ -25,12 +25,7 @@
           <li class="nav-item">
             <a class="nav-link active navbar-brand" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active navbar-brand" aria-current="page" href="./upcoming.html">Upcoming Events</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active navbar-brand" aria-current="page" href="./pastevent.html">past event</a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link active navbar-brand" aria-current="page" href="./stats.html">Stats</a>
           </li>
@@ -45,28 +40,50 @@
   </nav>
   <div class="carousel-inner" >
     <div class="carousel-item active " id="banner">
-      <img src="./banner3.png" class="d-block w-100 imgcarrusel" alt="Banner blue">
+      <img src="./asesst/banner3.png" class="d-block w-100 imgcarrusel" alt="Banner blue">
       <div class="carousel-caption">
         <h1>HOME</h1>
         <p>Find the best events here</p>
       </div>
     </div>
-  </div>
+     </div>
    <br>
    <br>
 <!-- ckeck box -->
-<div class="d-flex flex-grow-1 justify-content-start aling-items-start w-100 flex-wrap mb-5" id="divChecks">
-  <!-- ________________se insertan dinámicamente los checksboxs___________________ -->
-</div>
 
+<div class="d-flex flex-grow-1 justify-content-evenly aling-items-start w-100 flex-wrap lg-3" id="containerFiltros">
 
-
-  <main class="   d-flex flex-grow-1 justify-content-evenly aling-items-start w-100 flex-wrap mt-5 divcards" id="cards">
-    <div class="container" id="mensaje">
-       <!-- ________________se insertan dinámicamente las cards___________________ -->
+  <div class="d-flex flex-grow-1 justify-content-evenly aling-items-start w-40 flex-wrap mb-5" id="divChecks">
+    <!-- ________________se insertan dinámicamente los checkbox___________________ -->
+    
+  </div>
+  <!-- ______________________________selector filtro fecha_______________________- -->
+  
+  
+      <div class="filtroFecha">
+      <select class="form-select form-select-lg sm-3 fs-4" aria-label=".form-select-lg example " id="selectFecha">
+        <option value="" selected>Filter by date</option>
+        <option value="upcoming" id=" upcomingEvents">Upcoming Events</option>
+        <option value="past" id="pastEvents">Past Events</option>
+        
+      </select>
     </div>
+  </div>
 
-  </main>
+
+
+
+        <main class="   d-flex flex-grow-1 justify-content-evenly aling-items-start w-100 flex-wrap mt-5 divcards" id="cards">
+          <div class="container" id="mensaje">
+             <!-- ________________se insertan dinámicamente las cards___________________ -->
+          </div>
+      
+        </main>
+     
+
+
+
+
   
   <footer class="text-white bg-body-secondary mt-auto">
     <div class="container-fluid m-0">
