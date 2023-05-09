@@ -1,5 +1,3 @@
-
-
 function template(arrayDatos) {
   let cards = ` 
   <div class="card m-5" style="width: 26rem; height: 650px ">
@@ -8,7 +6,7 @@ function template(arrayDatos) {
     <h5 class="card-title">${arrayDatos.name}</h5>
     <p class="card-text mb-1">${arrayDatos.description}</p>
     <p class="card-text ">Precio : $ ${arrayDatos.price}</p>
-     <a href="./detail.html?id=${arrayDatos.id}" class="btn btn-dark onclick" id="${arrayDatos.id}"> Details </a>
+    <a href="./detail.html" class="btn btn-dark "> Details </a>
       </div>
     </div>
       </div>
@@ -49,7 +47,7 @@ async function apiFetch(apiUrl) {
     // console.log(response)
     // console.log(response.response)
     let arrayCategory = [...new Set(response.response.map(each => each.category))]
-    // console.log(arrayCategory)
+    console.log(arrayCategory)
     // ____________________________
 
     const allCategory = document.getElementById('divChecks')
@@ -73,18 +71,25 @@ async function apiFetch(apiUrl) {
       }
     }
 
-    let botonFecha = document.getElementById("selectFecha").addEventListener("change", cardsFiltradas)
-    let inputTexto = document.querySelector("#buscador").addEventListener("keyup", cardsFiltradas)
     let todoslosCheckbox = document.querySelectorAll(".form-check-input")
-    todoslosCheckbox.forEach(each => {
-      each.addEventListener("change", function (e) {
-        cardsFiltradas()
-      })
-    })
-     // ____________________________
+todoslosCheckbox.forEach( each =>{
+  each.addEventListener("change", function(e){
+cardsFiltradas()
+  })
+})
+
+    // ____________________________
     printCards(response.response, "cards")
- 
-  }
+    
+  
+    // checksTrue(response)
+
+    const inputTexto = document.querySelector('#buscador')
+        inputTexto.addEventListener('keyup', e => {
+    cardsFiltradas()   
+    })
+  
+  } 
   catch (error) {
     console.log(error)
   }
@@ -92,27 +97,18 @@ async function apiFetch(apiUrl) {
 }
 apiFetch(apiUrl)
 
-
-
-// ________________________________________
-
-
-
-
+________________________________________
 async function cardsFiltradas() {
   try {
-    // console.log()
-    let selectDate = document.getElementById("selectFecha").value
+    console.log()
+
     let inputTexto = document.getElementById("buscador").value.toLowerCase()
     let checks = Array.from(document.querySelectorAll('.form-check-input:checked')).map(e => e.value)
-
-    // console.log(checks)
-    let url = `https://pro-talento.up.railway.app/api/amazing/?name=${inputTexto}&category=${checks.join(',')}&time=${selectDate}`
+     console.log(checks)
+    let url = `https://pro-talento.up.railway.app/api/amazing/?name=${inputTexto}&category=${checks.join(',')}`
     let response = await fetch(url)
     response = await response.json()
-    // console.log(response.response)
-
-
+     console.log(response.response)
     if (response.response.length == 0) {
       busquedaFallida('cards')
 
@@ -131,6 +127,14 @@ async function cardsFiltradas() {
 
 
 // ___________________________
+// window.click_here = function(buttonId) {
+//   window.location.href = "../detail.html"; // se trae la dirección local y se cambia a la dirección de details
+//   window.idClickStr = buttonId  // Se almacena el valor del parámetro (buttonId)
+//   sessionStorage.setItem("idClickStr",idClickStr) // Se almacena la información en el Storage
+//  }
+// ___________________________
+
+
 function busquedaFallida(etiqueta_seleccionada) {
   const divCards = document.getElementById(etiqueta_seleccionada)
   divCards.innerHTML = `
@@ -141,50 +145,5 @@ function busquedaFallida(etiqueta_seleccionada) {
   </div>
 </div>
   `
-  // console.log(divCards)
+  console.log(divCards)
 }
-
-
-
-// _______________________metodo filter______________
-
-
-
-// async function filtroFecha() {
-//   try {
-
-//     let urlFecha = `https://pro-talento.up.railway.app/api/amazing?time=past`
-//     let responseFecha = await fetch(urlFecha)
-//     responseFecha = await responseFecha.json()
-//     // console.log(responseFecha)
-//     // console.log(urlFecha)
-
-//     let fechaActual = responseFecha.date
-//     let eventosPasados = responseFecha.response.filter(d => { return d.date < fechaActual });
-//     console.log(eventosPasados)
-//     let eventosFuturos = responseFecha.response.filter(f => { return f.date >= fechaActual });
-//     console.log(eventosFuturos)
-
-//     console.log(fechaActual, "esta fecha")
-//     // _________________--
-//     let pastEvents = document.getElementById("pastEvents")
-//     pastEvents.addEventListener('onclick', (event) => {
-//       printCards(eventosPasados, "cards", event.target.value);
-//     })
-
-//     // let upcomingEvents= document.getElementById("futureEvents:")
-
-
-//     // let categorySelect = document.getElementById('category-select');
-//     // categorySelect.addEventListener('change', (event) => {
-//     //   printCards(filteredData, "cards", event.target.value);
-//     // });
-
-//   }
-
-
-//   catch (error) {
-//     console.log(error)
-//   }
-// }
-// filtroFecha()

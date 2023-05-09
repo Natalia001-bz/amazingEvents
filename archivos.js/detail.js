@@ -1,7 +1,4 @@
 
-
-
-
 async function apiFetch() {
   let slectId= new URLSearchParams (
     window.location.search)
@@ -24,13 +21,13 @@ async function apiFetch() {
   cardDetail.innerHTML = `
   <div class="card mb-3" style="  ">
   <div class="row">
-    <div class="col-md-4 ">
+    <div class="col-md-6 ">
   <img src="${response.response.image}" class="img-fluid rounded-start  imgdetail">
   </div>
-  <div class="col-md-8">
+  <div class="col-md-6">
   <div class="card-body" >
-    <h5 class="card-title">${response.response.name}</h5><br>
-    <p class="card-text linea ">${response.response.description}</p> <br> 
+    <h5 class="card-title">${response.response.name}</h5>
+    <p class="card-text ">${response.response.description}</p> 
        <hr class="lineatop w-50">
     <p>Date: ${dateEvento}</p>   
   <p>Category: ${response.response.category}</p>
@@ -57,14 +54,3 @@ async function apiFetch() {
 
 }
 apiFetch()
-
-
-
-
-
-
-
-
-
-
-
